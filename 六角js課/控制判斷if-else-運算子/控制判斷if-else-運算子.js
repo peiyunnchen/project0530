@@ -50,17 +50,3 @@ switch(light){
     alert('預設行動');
     break;
 }
-let light='red'
-switch(light){
-    case 'red'
-    alert('紅色警戒');
-    break;
-    
-    case 'blue';
-    alert('藍色警戒');
-    break;
-    
-    default;
-    alert('預設行動');
-    break;
-}
