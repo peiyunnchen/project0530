@@ -4,11 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
     <title>Document</title>
   </head>
-  <body>
-    <input type="text" id="todo-input" /><button id="todo-add">新增</button>
-    <div id="todo-list"></div>
+  <body class="bg-secondary">
+    <div class="container col-6 vh-100 d-flex justify-content-center align-items-center" >
+      <!------------------------------->
+      <div class="card col-12" >
+        <h1 class="mt-0 text-muted">Todo List</h1>
+      <!-- <input type="text" id="todo-input" class="form-control" /><button id="todo-add" >新增</button> -->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">待辦事項</span>
+            </div>
+            <input type="text" id="todo-input" class="form-control" placeholder="準備要做的任務">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" id="todo-add" >新增</button>
+            </div>
+          </div>
+          <div id="todo-list"></div>
+        </div>
+      <!------------------------------->
+
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+
     <script src="index.js"></script>
   </body>
 </html>

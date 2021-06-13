@@ -90,32 +90,34 @@ function displayTodoList() {
     //   </li>`
     // }
     if (todos[i].edited === true) {
-      display += `<li>
-      <input type="text" id='editValue' value="${todos[i].text}"/>
-      <button class="todo-save" data-id= "${todos[i].id}">儲存</button>
-      <button class="todo-complete" data-id= "${todos[i].id}">完成</button>
-      <button class="todo-delete" data-id= "${todos[i].id}">刪除</button>
+      display += `<li class="list-group-item d-flex">
+      <input type="text" id='editValue' class='p-2 flex-grow-1' value="${todos[i].text}"/>
+      <button type="button" class="todo-save btn btn-info btn-sm "  data-id= "${todos[i].id}">儲存</button>
+      <button type="button" class="todo-complete btn btn-success btn-sm mx-1" data-id= "${todos[i].id}">完成</button>
+      <button type="button" class="todo-delete btn btn-secondary btn-sm" data-id= "${todos[i].id}">刪除</button>
       </li>`
-      
+
+
+
     }else {  if (todos[i].completed === true){
-      display += `<li> 
-      <del><span class="todo-item" data-id="${todos[i].id}">${todos[i].text}</span></del>
-      <button class="todo-edit" data-id= "${todos[i].id}">編輯</button>
-      <button class="todo-complete" data-id= "${todos[i].id}">完成</button>
-      <button class="todo-delete" data-id= "${todos[i].id}">刪除</button>
+      display += `<li class="list-group-item d-flex"> 
+      <del class='p-2 flex-grow-1'><span class="todo-item" data-id="${todos[i].id}">${todos[i].text}</span></del>
+      <button type="button" class="todo-edit btn btn-info btn-sm" data-id= "${todos[i].id}">編輯</button>
+      <button type="button" class="todo-complete btn btn-success btn-sm mx-1" data-id= "${todos[i].id}">完成</button>
+      <button type="button" class="todo-delete btn btn-secondary btn-sm" data-id= "${todos[i].id}">刪除</button>
       </li>`}else {
-        display += `<li>
-        <span class="todo-item"  data-id= "${todos[i].id}"> ${todos[i].text}</span>
-        <button class="todo-edit" data-id= "${todos[i].id}">編輯</button>
-        <button class="todo-complete" data-id="${todos[i].id}">完成</button>
-        <button class="todo-delete" data-id="${todos[i].id}">刪除</button>
+        display += `<li class="list-group-item d-flex">
+        <span class="todo-item p-2 flex-grow-1"  data-id= "${todos[i].id}"> ${todos[i].text}</span>
+        <button type="button" class="todo-edit btn btn-info btn-sm" data-id= "${todos[i].id}">編輯</button>
+        <button type="button" class="todo-complete btn btn-success mx-1 btn-sm" data-id="${todos[i].id}">完成</button>
+        <button type="button" class="todo-delete btn btn-secondary btn-sm"  data-id="${todos[i].id}">刪除</button>
         </li>`
       }
     }
   }
   // 把display這個li塞進ul，再塞進js中todoList中對應的HTML裡
   // todoList.innerHTML = '<ul>' + display + '</ul>'
-  todoList.innerHTML = `<ul>${display} </ul>`
+  todoList.innerHTML = `<ul class="list-group">${display} </ul>`
 
   // 若要使用querySelector，一定要用querySelectorAll
   let todoCompleteButton = document.getElementsByClassName('todo-complete')
