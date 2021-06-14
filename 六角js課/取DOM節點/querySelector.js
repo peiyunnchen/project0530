@@ -42,3 +42,10 @@
 // // 塞一個HTML <h1 class="blue"></h1>標籤到div id=main裡面
 // // 單引號內要加雙引號，單引+單引會混亂，程式碼不知道哪裡開始或結束
 // el.innerHTML='<h1 class="blue">1234</h1>'
+
+// 用getAttribute取連結
+var el3=document.querySelector('.h2class a').getAttribute('href')
+console.log(el3);
+// 用getAttribute取文字
+var el4=document.querySelector('.h2class a').textContent
+console.log(el4);
