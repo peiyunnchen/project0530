@@ -49,10 +49,19 @@ function updateList(){
 }
 updateList()
 
+// function checkList3(e){
+//   let num=e.target.nodeName;
+//   if(num !== "LI"){return}
+//     let str=e.target.dataset.num;
+//     console.log('你現在選擇的農夫是'+country3[str].farmer);
+// }
+//<--------.splice陣列中刪除-----------------> 
 function checkList3(e){
-  let num=e.target.nodeName;
-  if(num !== "LI"){return}
-    let str=e.target.dataset.num;
-    console.log('你現在選擇的農夫是'+country3[str].farmer);
+  let nodeName=e.target.nodeName;
+  if(nodeName !== "LI"){return}
+    let num3=e.target.dataset.num;
+country3.splice(num3,1);
+// 陣列.splice(從第幾個開始,刪除幾個)
+updateList()
 }
 list3.addEventListener('click',checkList3)

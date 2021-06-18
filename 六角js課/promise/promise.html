@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let sentToAirport = true;
+
+      //製造promise let X = new Promise(function(resolve,reject){})
+      let p = new Promise(function (resolve, reject) {
+        if (sentToAirport) {
+          resolve("from resolve:send to airport");
+        } else {
+          reject("from reject:order cancelled");
+        }
+      });
+
+      //   接resolve來的值 X.then(function(自訂變數存成功的值){})
+      //   接reject來的值 X.catch(function(自訂變數存失敗的值){})
+      p.then(function (message) {
+        console.log(`${message} - promise resolve`);
+      }).catch(function (message) {
+        console.log(`${message} - promise reject`);
+      });
+
+      // <--------------async function與await------------------------>
+      // 用function new promise
+      function sendRequest() {
+        return new Promise(function (resolve, reject) {
+          // setTimeout(function(){},毫秒)
+          setTimeout(function () {
+            resolve("john doe");
+          }, 2000);
+        });
+      }
+
+      //async是一個function，用async宣告此為非同步函式
+      //await後方會是promise
+      async function getMessage() {
+        try {
+          //專注處理成功
+          let username = await sendRequest();
+          let username1 = sendRequest();
+          console.log(username);
+          console.log(username1);
+        } catch (errorMessage) {
+          //專注處理失敗
+          console.log(errorMessage);
+        }
+      }
+      getMessage();
+    </script>
+  </body>
+</html>

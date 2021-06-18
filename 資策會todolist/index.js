@@ -58,7 +58,7 @@ todos=[...newTodos]
 // 利用...展開array傳值，不然就會變成傳址
 }
 
-
+`ul>li*10`
 function displayTodoList() {
   let display = ''
   for (let i = 0; i < todos.length; i++) {
